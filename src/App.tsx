@@ -1,12 +1,8 @@
-import './index.css'
+import '../src/styles/index.css'
 import './App.css'
 
 function App() {
-
-	return (
-		<>
-		</>
-	)
+	return <></>
 }
 
 export default App
