@@ -1,8 +1,9 @@
 import '../src/styles/index.css'
 import './App.css'
+import Header from './components/header'
 
 function App() {
-	return <></>
+	return <Header />
 }
 
 export default App
