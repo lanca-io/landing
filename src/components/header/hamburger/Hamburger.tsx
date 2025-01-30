@@ -1,6 +1,6 @@
 import { FC, useMemo } from 'react'
 import Button from '../../common/Button'
-import NavigationWidget from '../../common/NavigationWidget/NavigationWidget'
+import NavigationWidget from '../../common/NavigationWidget'
 import classNames from './Hamburger.module.pcss'
 
 type HamburgerProps = {

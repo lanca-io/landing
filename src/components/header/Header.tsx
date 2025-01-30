@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from 'react'
 
 import Button from '../common/Button'
-import Hamburger from './hamburger/Hamburger'
+import Hamburger from './hamburger'
 import MenuIcon from '../../assets/icons/MenuIcon'
 import CloseIcon from '../../assets/icons/CloseIcon'
 import useMediaQuery from '../../hooks/useMediaQuery'
