@@ -19,6 +19,7 @@
 .large {
 	min-width: 286px;
 	min-height: 148px;
+	height: 148px;
 }
 
 .title {
@@ -41,4 +42,28 @@
 	height: 32px;
 	border-radius: var(--space-3);
 	background-color: var(--color-grey-100);
+}
+
+@media (max-width: 992px) {
+	.large {
+		min-width: 210px;
+		max-width: 100%;
+		width: 100%;
+		min-height: 176px;
+		height: 148px;
+	}
+}
+
+@media (max-width: 480px) {
+	.large {
+		min-width: 210px;
+		max-width: 100%;
+		width: 100%;
+		min-height: 140px;
+		height: 148px;
+	}
+
+	.title > p {
+		font-size: 24px;
+	}
 }

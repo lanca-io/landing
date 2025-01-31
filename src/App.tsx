@@ -1,9 +1,15 @@
 import '../src/styles/index.css'
 import './App.css'
+import Footer from './components/footer'
 import Header from './components/header'
 
 function App() {
-	return <Header />
+	return (
+		<>
+			<Header />
+			<Footer />
+		</>
+	)
 }
 
 export default App

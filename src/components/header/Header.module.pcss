@@ -5,9 +5,14 @@
 	width: 100%;
 	height: var(--header-height);
 	padding: var(--space-2) var(--space-6);
+	z-index: 1000;
 }
 
-.header__logoContainer {
+.no-scroll {
+	overflow: hidden;
+}
+
+.header__logo-container {
 	width: 256px;
 	height: 32px;
 }
@@ -18,11 +23,11 @@
 	gap: var(--space-3);
 }
 
-.navLink {
+.header__nav-link {
 	display: flex;
 	height: 40px;
 	padding: var(--space-4);
-	align-items: anchor-center;
+	align-items: center;
 }
 
 .header__actions {
@@ -32,7 +37,7 @@
 }
 
 @media (max-width: 992px) {
-	.header__logoContainer {
+	.header__logo-container {
 		width: 158px;
 	}
 

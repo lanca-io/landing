@@ -1,9 +1,13 @@
 .hamburger {
-	display: flex;
-	flex-direction: column;
+	position: fixed;
+	top: var(--header-height);
+	left: 0;
+	width: 100%;
 	height: calc(100vh - var(--header-height));
 	background-color: var(--color-grey-25);
 	padding: var(--space-7) var(--space-6);
+	overflow: hidden;
+	z-index: 1000;
 }
 
 .hamburger__heading {
@@ -35,7 +39,14 @@
 }
 
 @media (max-width: 480px) {
+	.hamburger {
+		padding: var(--space-7) var(--space-4);
+	}
 	.hamburger__cards {
 		flex-direction: column;
+	}
+
+	.hamburger__heading > p {
+		font-size: 18px;
 	}
 }

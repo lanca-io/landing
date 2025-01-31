@@ -8,49 +8,57 @@ import useMediaQuery from '../../hooks/useMediaQuery'
 import classNames from './Header.module.pcss'
 
 const navItems = [
-	{ href: '/', label: 'SDK' },
-	{ href: '/about', label: 'Bridging Framework' },
-	{ href: '/contact', label: 'Whitepaper' },
+    { href: '/', label: 'SDK' },
+    { href: '/about', label: 'Bridging Framework' },
+    { href: '/contact', label: 'Whitepaper' },
 ]
 
 const Header: FC = () => {
-	const [isHamburgerOpen, setIsHamburgerOpen] = useState<boolean>(false)
-	const { isPhone, isTablet } = useMediaQuery()
+    const [isHamburgerOpen, setIsHamburgerOpen] = useState<boolean>(false)
+    const { isPhone, isTablet } = useMediaQuery()
+
+    useEffect(() => {
+        if (!isPhone && !isTablet) {
+            setIsHamburgerOpen(false)
+        }
+    }, [isPhone, isTablet])
 
 	useEffect(() => {
-		if (!isPhone && !isTablet) {
-			setIsHamburgerOpen(false)
-		}
-	}, [isPhone, isTablet])
+        if (isHamburgerOpen) {
+            document.body.classList.add(classNames['no-scroll'])
+        } else {
+            document.body.classList.remove(classNames['no-scroll'])
+        }
+    }, [isHamburgerOpen])
 
-	const toggleHamburger = () => {
-		setIsHamburgerOpen(!isHamburgerOpen)
-	}
+    const toggleHamburger = () => {
+        setIsHamburgerOpen(!isHamburgerOpen)
+    }
 
-	const hamburgerIcon = isHamburgerOpen ? <CloseIcon /> : <MenuIcon />
+    const hamburgerIcon = isHamburgerOpen ? <CloseIcon /> : <MenuIcon />
 
-	return (
-		<>
-			<header className={classNames.header}>
-				<div className={classNames.header__logoContainer}>
-					<img src="/Lanca.png" alt="Lanca Logo" />
-				</div>
-				<nav className={classNames.header__nav} aria-label="Navigation">
-					{navItems.map(item => (
-						<a key={item.href} href={item.href} className={classNames.navLink}>
-							<p className="text-small">{item.label}</p>
-						</a>
-					))}
-				</nav>
-				<div className={classNames.header__actions}>
-					{!isPhone && !isTablet && <Button text="Contact Us" onClick={() => {}} color="primary" link="" />}
-					<Button text="Open App" onClick={() => {}} color="secondary" link="" />
-					{(isPhone || isTablet) && <Button icon={hamburgerIcon} onClick={toggleHamburger} color="primary" />}
-				</div>
-			</header>
-			<Hamburger isOpen={isHamburgerOpen} />
-		</>
-	)
+    return (
+        <>
+            <header className={classNames['header']}>
+                <div className={classNames['header__logo-container']}>
+                    <img src="/Lanca.png" alt="Lanca Logo" />
+                </div>
+                <nav className={classNames['header__nav']} aria-label="Navigation">
+                    {navItems.map(item => (
+                        <a key={item.href} href={item.href} className={classNames['header__nav-link']}>
+                            <p className="text-small">{item.label}</p>
+                        </a>
+                    ))}
+                </nav>
+                <div className={classNames['header__actions']}>
+                    {!isPhone && !isTablet && <Button text="Contact Us" onClick={() => {}} color="primary" link="" />}
+                    <Button text="Open App" onClick={() => {}} color="secondary" link="" />
+                    {(isPhone || isTablet) && <Button icon={hamburgerIcon} onClick={toggleHamburger} color="primary" />}
+                </div>
+            </header>
+            <Hamburger isOpen={isHamburgerOpen} />
+        </>
+    )
 }
 
 export default Header
