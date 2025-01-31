@@ -134,7 +134,7 @@ p {
 
 .heading-small {
 	font-size: 32px;
-	font-weight: 500;
+	font-weight: 400;
 	line-height: 36px;
 	color: var(--color-grey-700);
 }
