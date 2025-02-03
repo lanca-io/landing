@@ -13,12 +13,6 @@
     "preview": "vite preview",
     "prepare": "husky"
   },
-  "husky": {
-		"hooks": {
-			"pre-commit": "npm run format && npm run lint:fix && git add -A .",
-			"pre-push": "npm run test"
-		}
-	},
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
