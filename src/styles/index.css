@@ -3,6 +3,9 @@
 :root {
 	--header-height: 56px;
 	--footer-height: 570px;
+	--z-index-low: 1;
+	--z-index-medium: 2;
+	--z-index-high: 3;
 }
 
 html,
