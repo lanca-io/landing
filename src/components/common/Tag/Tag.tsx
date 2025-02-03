@@ -1,5 +1,4 @@
 import { FC } from 'react'
-
 import classNames from './Tag.module.pcss'
 
 type TagColors = 'lanca' | 'concero' | 'disabled'
@@ -14,7 +13,7 @@ type TagProps = {
 const Tag: FC<TagProps> = ({ text, color, size = 'small' }): JSX.Element => {
 	return (
 		<div className={`${classNames['tag']} ${classNames[color]} ${classNames[size]}`}>
-			<p className="text-xsmall">{text}</p>
+			{text}
 		</div>
 	)
 }
