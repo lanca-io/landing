@@ -11,11 +11,7 @@ type TagProps = {
 }
 
 const Tag: FC<TagProps> = ({ text, color, size = 'small' }): JSX.Element => {
-	return (
-		<div className={`${classNames['tag']} ${classNames[color]} ${classNames[size]}`}>
-			{text}
-		</div>
-	)
+	return <div className={`${classNames['tag']} ${classNames[color]} ${classNames[size]}`}>{text}</div>
 }
 
 export default Tag
