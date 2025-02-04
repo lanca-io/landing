@@ -1,70 +1,78 @@
-import { FC, useState, useEffect } from 'react'
+import { FC, useState, useEffect } from 'react';
+import { externalLinks } from '../../constants/constants';
 
-import Button from '../common/Button'
-import Hamburger from './hamburger'
-import MenuIcon from '../../assets/icons/MenuIcon'
-import CloseIcon from '../../assets/icons/CloseIcon'
-import useMediaQuery from '../../hooks/useMediaQuery'
-import useToggleModal from '../../hooks/useOpenModal'
-import classNames from './Header.module.pcss'
-import Contact from '../contact/Contact'
+import Button from '../common/Button';
+import Hamburger from './hamburger';
+import MenuIcon from '../../assets/icons/MenuIcon';
+import CloseIcon from '../../assets/icons/CloseIcon';
+import useMediaQuery from '../../hooks/useMediaQuery';
+import classNames from './Header.module.pcss';
 
 const navItems = [
-	{ href: 'https://www.npmjs.com/package/lanca-sdk-demo', label: 'SDK' },
-	{ href: '/', label: 'Bridging Framework' },
-	{ href: '/contact', label: 'Whitepaper' },
-]
+    { href: externalLinks.sdk, label: 'SDK', disabled: false },
+    { href: '/', label: 'Bridging Framework', disabled: true },
+    { href: '/contact', label: 'Whitepaper', disabled: true },
+];
 
-const Header: FC = () => {
-	const [isHamburgerOpen, setIsHamburgerOpen] = useState<boolean>(false)
-	const { isModalOpen, toggleModal } = useToggleModal()
-	const { isPhone, isTablet } = useMediaQuery()
+type HeaderProps = {
+    toggleModal: () => void;
+};
 
-	useEffect(() => {
-		if (!isPhone && !isTablet) {
-			setIsHamburgerOpen(false)
-		}
-	}, [isPhone, isTablet])
+const Header: FC<HeaderProps> = ({ toggleModal }) => {
+    const [isHamburgerOpen, setIsHamburgerOpen] = useState<boolean>(false);
 
-	useEffect(() => {
-		if (isHamburgerOpen) {
-			document.body.classList.add(classNames['no-scroll'])
-		} else {
-			document.body.classList.remove(classNames['no-scroll'])
-		}
-	}, [isHamburgerOpen])
+    const { isPhone, isTablet } = useMediaQuery();
 
-	const toggleHamburger = () => {
-		setIsHamburgerOpen(!isHamburgerOpen)
-	}
+    useEffect(() => {
+        if (!isPhone && !isTablet) {
+            setIsHamburgerOpen(false);
+        }
+    }, [isPhone, isTablet]);
 
-	const hamburgerIcon = isHamburgerOpen ? <CloseIcon /> : <MenuIcon />
+    useEffect(() => {
+        if (isHamburgerOpen) {
+            document.body.classList.add(classNames['no-scroll']);
+        } else {
+            document.body.classList.remove(classNames['no-scroll']);
+        }
+    }, [isHamburgerOpen]);
 
-	return (
-		<>
-			<header className={classNames['header']}>
-				<div className={classNames['header__logo-container']}>
-					<img src="/Lanca.png" alt="Lanca Logo" />
-				</div>
-				<nav className={classNames['header__nav']} aria-label="Navigation">
-					{navItems.map(item => (
-						<a key={item.href} href={item.href} target="_blank" className={classNames['header__nav-link']}>
-							<p className="text-small">{item.label}</p>
-						</a>
-					))}
-				</nav>
-				<div className={classNames['header__actions']}>
-					{!isPhone && !isTablet && (
-						<Button text="Contact Us" onClick={toggleModal} color="primary" link="" />
-					)}
-					<Button text="Open App" onClick={() => {}} color="secondary" link="" />
-					{(isPhone || isTablet) && <Button icon={hamburgerIcon} onClick={toggleHamburger} color="primary" />}
-				</div>
-			</header>
-			<Hamburger isOpen={isHamburgerOpen} />
-			<Contact isOpen={isModalOpen} toggleOpen={toggleModal} />
-		</>
-	)
-}
+    const toggleHamburger = () => {
+        setIsHamburgerOpen(!isHamburgerOpen);
+    };
 
-export default Header
+    const hamburgerIcon = isHamburgerOpen ? <CloseIcon /> : <MenuIcon />;
+
+    return (
+        <>
+            <header className={classNames['header']}>
+                <div className={classNames['header__logo-container']}>
+                    <img src="/Lanca.png" alt="Lanca Logo" />
+                </div>
+                <nav className={classNames['header__nav']} aria-label="Navigation">
+                    {navItems.map(item => (
+                        <a
+                            key={item.href}
+                            href={item.disabled ? undefined : item.href}
+                            target={item.disabled ? undefined : "_blank"}
+                            className={`${classNames['header__nav-link']} ${item.disabled ? classNames['disabled'] : ''}`}
+                            onClick={item.disabled ? (e) => e.preventDefault() : undefined}
+                        >
+                            <p className="text-small">{item.label}</p>
+                        </a>
+                    ))}
+                </nav>
+                <div className={classNames['header__actions']}>
+                    {!isPhone && !isTablet && (
+                        <Button text="Contact Us" onClick={toggleModal} color="primary" link="" />
+                    )}
+                    <Button text="Open App" color="secondary" link={externalLinks.app} />
+                    {(isPhone || isTablet) && <Button icon={hamburgerIcon} onClick={toggleHamburger} color="primary" />}
+                </div>
+            </header>
+            <Hamburger isOpen={isHamburgerOpen} toggleModal={toggleModal} />
+        </>
+    );
+};
+
+export default Header;
