@@ -27,9 +27,29 @@
 	color: var(--color-grey-600);
 }
 
+.primary:hover {
+	background-color: var(--color-grey-200);
+	color: var(--color-grey-700);
+}
+
+.primary:active {
+	background-color: var(--color-grey-300);
+	color: var(--color-grey-700);
+}
+
 .secondary {
 	background-color: var(--color-primary-100);
 	color: var(--color-primary-600);
+}
+
+.secondary:hover {
+	background-color: var(--color-primary-200);
+	color: var(--color-primary-700);
+}
+
+.secondary:active {
+	background-color: var(--color-primary-300);
+	color: var(--color-primary-700);
 }
 
 .tertiary {
@@ -37,7 +57,24 @@
 	color: var(--color-primary-25);
 }
 
+.tertiary:hover {
+	background-color: var(--color-primary-700);
+	border-color: var(--color-primary-700);
+}
+
+.tertiary:active {
+	background-color: var(--color-primary-800);
+	border-color: var(--color-primary-800);
+}
+
 .button__disabled {
 	color: var(--color-grey-400);
 	background-color: var(--color-grey-50);
+	cursor: not-allowed;
+}
+
+.button__disabled:hover {
+	color: var(--color-grey-400);
+	background-color: var(--color-grey-50);
+	cursor: not-allowed;
 }

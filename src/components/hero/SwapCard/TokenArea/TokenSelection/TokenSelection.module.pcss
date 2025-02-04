@@ -1,0 +1,44 @@
+.selected-token {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: var(--space-1);
+
+	h4 {
+		font-size: 16px;
+		line-height: 18px;
+		font-weight: 400;
+		color: var(--color-grey-600);
+	}
+
+	p {
+		font-size: 14px;
+		line-height: 18px;
+		font-weight: 400;
+		color: var(--color-grey-500);
+	}
+}
+
+.token-selection__button {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 156px;
+	width: 100%;
+	border-radius: var(--space-3);
+	background: var(--color-grey-100);
+	padding: var(--space-1) var(--space-3);
+	gap: var(--space-2);
+	cursor: pointer;
+}
+
+.token-selection__button:hover {
+	background: var(--color-grey-200);
+}
+
+.token-selection {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}

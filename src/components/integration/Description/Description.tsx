@@ -1,5 +1,4 @@
 import { FC, useMemo } from 'react'
-
 import Button from '../../common/Button'
 import Tag from '../../common/Tag'
 import classNames from './Description.module.pcss'
@@ -10,6 +9,10 @@ type HeadingProps = {
 	text: string
 	firstButtonText: string
 	secondButtonText: string
+	firstButtonLink?: string
+	secondButtonLink?: string
+	firstButtonOnClick?: () => void
+	secondButtonOnClick?: () => void
 	isComingSoon?: boolean
 }
 
@@ -19,6 +22,10 @@ const Description: FC<HeadingProps> = ({
 	text,
 	firstButtonText,
 	secondButtonText,
+	firstButtonLink,
+	secondButtonLink,
+	firstButtonOnClick,
+	secondButtonOnClick,
 	isComingSoon = false,
 }): JSX.Element => {
 	const memoizedTag = useMemo(() => {
@@ -33,9 +40,11 @@ const Description: FC<HeadingProps> = ({
 				color="secondary"
 				size="large"
 				className={classNames.description__button}
+				link={firstButtonLink}
+				onClick={firstButtonOnClick}
 			/>
 		)
-	}, [firstButtonText, isComingSoon])
+	}, [firstButtonText, isComingSoon, firstButtonLink, firstButtonOnClick])
 
 	const memoizedSecondButton = useMemo(() => {
 		return (
@@ -45,9 +54,11 @@ const Description: FC<HeadingProps> = ({
 				color="primary"
 				size="large"
 				className={classNames.description__button}
+				link={secondButtonLink}
+				onClick={secondButtonOnClick}
 			/>
 		)
-	}, [secondButtonText, isComingSoon])
+	}, [secondButtonText, isComingSoon, secondButtonLink, secondButtonOnClick])
 
 	return (
 		<div className={classNames.container}>

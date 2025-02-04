@@ -1,4 +1,5 @@
 import { FC, useState, useEffect } from 'react'
+import { externalLinks } from '../../constants/constants'
 
 import Button from '../common/Button'
 import Hamburger from './hamburger'
@@ -8,13 +9,18 @@ import useMediaQuery from '../../hooks/useMediaQuery'
 import classNames from './Header.module.pcss'
 
 const navItems = [
-	{ href: '/', label: 'SDK' },
-	{ href: '/about', label: 'Bridging Framework' },
-	{ href: '/contact', label: 'Whitepaper' },
+	{ href: externalLinks.sdk, label: 'SDK', disabled: false },
+	{ href: '/', label: 'Bridging Framework', disabled: true },
+	{ href: '/contact', label: 'Whitepaper', disabled: true },
 ]
 
-const Header: FC = () => {
+type HeaderProps = {
+	toggleModal: () => void
+}
+
+const Header: FC<HeaderProps> = ({ toggleModal }) => {
 	const [isHamburgerOpen, setIsHamburgerOpen] = useState<boolean>(false)
+
 	const { isPhone, isTablet } = useMediaQuery()
 
 	useEffect(() => {
@@ -45,18 +51,26 @@ const Header: FC = () => {
 				</div>
 				<nav className={classNames['header__nav']} aria-label="Navigation">
 					{navItems.map(item => (
-						<a key={item.href} href={item.href} className={classNames['header__nav-link']}>
+						<a
+							key={item.href}
+							href={item.disabled ? undefined : item.href}
+							target={item.disabled ? undefined : '_blank'}
+							className={`${classNames['header__nav-link']} ${item.disabled ? classNames['disabled'] : ''}`}
+							onClick={item.disabled ? e => e.preventDefault() : undefined}
+						>
 							<p className="text-small">{item.label}</p>
 						</a>
 					))}
 				</nav>
 				<div className={classNames['header__actions']}>
-					{!isPhone && !isTablet && <Button text="Contact Us" onClick={() => {}} color="primary" link="" />}
-					<Button text="Open App" onClick={() => {}} color="secondary" link="" />
+					{!isPhone && !isTablet && (
+						<Button text="Contact Us" onClick={toggleModal} color="primary" link="" />
+					)}
+					<Button text="Open App" color="secondary" link={externalLinks.app} />
 					{(isPhone || isTablet) && <Button icon={hamburgerIcon} onClick={toggleHamburger} color="primary" />}
 				</div>
 			</header>
-			<Hamburger isOpen={isHamburgerOpen} />
+			<Hamburger isOpen={isHamburgerOpen} toggleModal={toggleModal} />
 		</>
 	)
 }

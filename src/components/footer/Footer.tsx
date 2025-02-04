@@ -6,16 +6,17 @@ import Button from '../common/Button'
 import NavigationWidget from '../common/NavigationWidget'
 import SocialWidget from '../common/SocialWidget'
 import classNames from './Footer.module.pcss'
+import { externalLinks } from '../../constants/constants'
 
 const navItems = [
-	{ title: 'SDK', link: '/' },
-	{ title: 'Bridging Framework', link: '/' },
-	{ title: 'Docs', link: '/' },
+	{ title: 'SDK', link: externalLinks.sdk, disabled: false },
+	{ title: 'Bridging Framework', link: '/', disabled: true },
+	{ title: 'Docs', link: externalLinks.documentation, disabled: false },
 ]
 
 const socialItems: { icon: JSX.Element; link: string; social: Social }[] = [
-	{ icon: <TwitterIcon />, link: '/', social: 'twitter' },
-	{ icon: <DiscordIcon />, link: '/', social: 'discord' },
+	{ icon: <TwitterIcon />, link: externalLinks.twitter, social: 'twitter' },
+	{ icon: <DiscordIcon />, link: externalLinks.discord, social: 'discord' },
 ]
 
 const description = (
@@ -31,7 +32,7 @@ const LogoContainer: FC = memo(() => (
 	</div>
 ))
 
-const Content: FC = memo(() => {
+const Content: FC<{ toggleModal: () => void }> = memo(({ toggleModal }) => {
 	const socialWidgets = useMemo(() => {
 		return socialItems.map(item => (
 			<SocialWidget key={item.social} icon={item.icon} link={item.link} social={item.social} />
@@ -43,7 +44,7 @@ const Content: FC = memo(() => {
 			<div className={classNames['footer__content-description']}>
 				{description}
 				<div className={classNames['footer__content-action']}>
-					<Button text="Contact Us" onClick={() => {}} color="secondary" size="large" />
+					<Button text="Contact Us" onClick={toggleModal} color="secondary" size="large" />
 				</div>
 			</div>
 			<div className={classNames['footer__content-links']}>
@@ -57,7 +58,13 @@ const Content: FC = memo(() => {
 const Documentation: FC = memo(() => {
 	const navigationWidgets = useMemo(() => {
 		return navItems.map(item => (
-			<NavigationWidget key={item.title} title={item.title} link={item.link} size="large" />
+			<NavigationWidget
+				key={item.title}
+				title={item.title}
+				link={item.link}
+				disabled={item.disabled}
+				size="large"
+			/>
 		))
 	}, [])
 
@@ -83,10 +90,10 @@ const Copyright: FC = memo(() => (
 	</div>
 ))
 
-const Footer: FC = () => (
+const Footer: FC<{ toggleModal: () => void }> = ({ toggleModal }) => (
 	<div className={classNames['footer']}>
 		<LogoContainer />
-		<Content />
+		<Content toggleModal={toggleModal} />
 		<Documentation />
 		<Copyright />
 	</div>
