@@ -16,9 +16,9 @@ function App() {
 			<Hero />
 			<About />
 			<Benefits />
-			<Integration toggleModal={toggleModal}/>
-			<Footer toggleModal={toggleModal}/>
-			<Contact isOpen={isModalOpen} toggleOpen={toggleModal}/>
+			<Integration toggleModal={toggleModal} />
+			<Footer toggleModal={toggleModal} />
+			<Contact isOpen={isModalOpen} toggleOpen={toggleModal} />
 		</>
 	)
 }

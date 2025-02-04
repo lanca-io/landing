@@ -28,7 +28,14 @@ const Button: FC<ButtonProps> = ({
 	const buttonClass = `${classNames['button']} ${classNames[color]} ${classNames[size]} ${className ? className : ''} ${isDisabled ? classNames['button__disabled'] : ''}`
 
 	return link ? (
-		<a href={link} className={buttonClass} target='_blank' rel='noopener noreferrer' onClick={isDisabled ? undefined : onClick} aria-disabled={isDisabled}>
+		<a
+			href={link}
+			className={buttonClass}
+			target="_blank"
+			rel="noopener noreferrer"
+			onClick={isDisabled ? undefined : onClick}
+			aria-disabled={isDisabled}
+		>
 			{buttonContent}
 		</a>
 	) : (
