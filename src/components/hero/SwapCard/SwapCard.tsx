@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { externalLinks } from '../../../constants/constants'
 
 import classNames from './SwapCard.module.pcss'
 import TokenArea from './TokenArea'
@@ -14,7 +15,7 @@ const SwapCard: FC = (): JSX.Element => {
 			<TokenArea direction="to" />
 			<Divider />
 			<div />
-			<Button text="Connect Wallet" color="tertiary" size="large" />
+			<Button text="Connect Wallet" color="tertiary" size="large" link={externalLinks.app} />
 		</div>
 	)
 }
