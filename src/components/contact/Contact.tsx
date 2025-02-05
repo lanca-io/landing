@@ -34,19 +34,45 @@ const Contact: FC<ContactProps> = ({ isOpen, toggleOpen }) => {
 
 	const inputFields = useMemo(
 		() => [
-			{ name: 'fullName', placeholder: 'Full Name', size: 'small' as TextInputSize, error: errors.fullName },
-			{ name: 'companyRole', placeholder: 'I am...', size: 'small' as TextInputSize, error: errors.companyRole },
+			{
+				name: 'fullName',
+				title: 'Name Surname',
+				placeholder: 'Name Surname',
+				size: 'small' as TextInputSize,
+				error: errors.fullName,
+			},
+			{
+				name: 'companyRole',
+				title: 'Company & Role',
+				placeholder: 'I am...',
+				size: 'small' as TextInputSize,
+				error: errors.companyRole,
+			},
 			{
 				name: 'email',
+				title: 'Email',
 				placeholder: 'your@mail.com',
 				size: 'small' as TextInputSize,
 				error: errors.email,
 				type: 'email',
 			},
-			{ name: 'message', placeholder: 'Hello Lanca!', size: 'large' as TextInputSize, error: errors.message },
+			{
+				name: 'message',
+				title: 'Message',
+				placeholder: 'Hello Lanca!',
+				size: 'large' as TextInputSize,
+				error: errors.message,
+			},
 		],
 		[errors],
-	) as { name: FormDataKey; placeholder: string; size: TextInputSize; error?: string; type?: string }[]
+	) as {
+		name: FormDataKey
+		placeholder: string
+		size: TextInputSize
+		error?: string
+		type?: string
+		title?: string
+	}[]
 
 	return (
 		<Modal isOpen={isOpen} setIsOpen={toggleOpen} title="Contact us" showHeader={!state.succeeded}>
@@ -54,9 +80,9 @@ const Contact: FC<ContactProps> = ({ isOpen, toggleOpen }) => {
 				<Success onBack={handleBack} />
 			) : (
 				<form className={classNames['contact-form']} onSubmit={onSubmit}>
-					{inputFields.map(({ name, placeholder, size, error, type }) => (
+					{inputFields.map(({ name, placeholder, size, error, type, title }) => (
 						<div key={name} className={classNames['contact-info__elem']}>
-							<p className="text-xsmall">{placeholder}</p>
+							<p className="text-xsmall">{title}</p>
 							<TextInput
 								name={name}
 								value={formData[name]}

@@ -5,7 +5,7 @@ const Amounts: FC = () => {
 	return (
 		<div className={classNames['amounts']}>
 			<div className={classNames['amount']}>
-				<p>$0</p>
+				<p>Enter amount</p>
 			</div>
 		</div>
 	)

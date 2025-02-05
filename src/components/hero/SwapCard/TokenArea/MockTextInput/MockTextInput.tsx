@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { externalLinks } from '../../../../../constants/constants'
 import classNames from './MockTextInput.module.pcss'
 
 type MockTextInputProps = {
@@ -7,9 +8,9 @@ type MockTextInputProps = {
 
 const MockTextInput: FC<MockTextInputProps> = ({ value = '0' }) => {
 	return (
-		<div className={classNames['mock-input__wrapper']}>
+		<a className={classNames['mock-input__wrapper']} target="_blank" href={externalLinks.app} rel="noreferrer">
 			<p className={classNames['mock-input']}>{value}</p>
-		</div>
+		</a>
 	)
 }
 

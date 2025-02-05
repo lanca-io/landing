@@ -17,7 +17,7 @@ const NavigationWidget: FC<WidgetProps> = ({ title, size = 'large', link, disabl
 	return (
 		<div className={`${classNames['card']} ${classNames[size]} ${disabled ? classNames['disabled'] : ''}`}>
 			<div className={classNames['title']}>
-				<p className="text-large">{title}</p>
+				<p className="heading-xsmall">{title}</p>
 			</div>
 			<div className={classNames['action']}>
 				{!disabled ? (

@@ -14,8 +14,9 @@ const SwapCard: FC = (): JSX.Element => {
 			<Direction />
 			<TokenArea direction="to" />
 			<Divider />
-			<div />
-			<Button text="Connect Wallet" color="tertiary" size="large" link={externalLinks.app} />
+			<div className={classNames['button-container']}>
+				<Button text="Connect Wallet" color="tertiary" size="large" link={externalLinks.app} />
+			</div>
 		</div>
 	)
 }
