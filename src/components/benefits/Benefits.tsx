@@ -39,7 +39,7 @@ const Benefits: FC = (): JSX.Element => {
 				<div className={classNames['benefits__grid']}>
 					<MemoizedBenefitCard
 						title="Secure"
-						description="By leveraging Chainlink Functions, our infrastructure achieves full decentralization through trust-minimized off-chain computations and consensus mechanisms"
+						description="Utilise Concero Messaging and Chainlink’s CCIP for secure and reliable cross-chain communications."
 						imageUrl="/Secure.png"
 						firstTag={<Tag text="Concero Messaging" color="concero" size="small" />}
 						secondTag={<Tag text="Chainlink CCIP" color="lanca" size="small" />}
@@ -47,8 +47,8 @@ const Benefits: FC = (): JSX.Element => {
 					{isPhone || (isTablet && <Divider />)}
 					<MemoizedBenefitCard
 						title="New chains integrated in 2 hours"
-						description="By leveraging Chainlink Functions, our infrastructure achieves full decentralization through trust-minimized off-chain computations and consensus mechanisms"
-						imageUrl="/Decentralized.png"
+						description="Revolutionary approach to cross chain transactions through Lanca Bridging Framework. Easy deployment on new chains in under 2 hours. "
+						imageUrl="/Chain.png"
 						comingSoon
 					/>
 				</div>
