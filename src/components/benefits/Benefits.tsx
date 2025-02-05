@@ -28,7 +28,7 @@ const Benefits: FC = (): JSX.Element => {
 						imageUrl="/Decentralized.png"
 						firstTag={<Tag text="Chainlink Functions" color="lanca" size="small" />}
 					/>
-					{isPhone || (isTablet && <Divider />)}
+					{(isPhone || isTablet) && <Divider />}
 					<MemoizedBenefitCard
 						title="Gas Abstracted"
 						description="Simplify user experience with gas fees managed internally, eliminating the need for users to hold native tokens."
@@ -44,7 +44,7 @@ const Benefits: FC = (): JSX.Element => {
 						firstTag={<Tag text="Concero Messaging" color="concero" size="small" />}
 						secondTag={<Tag text="Chainlink CCIP" color="lanca" size="small" />}
 					/>
-					{isPhone || (isTablet && <Divider />)}
+					{(isPhone || isTablet) && <Divider />}
 					<MemoizedBenefitCard
 						title="New chains integrated in 2 hours"
 						description="Revolutionary approach to cross chain transactions through Lanca Bridging Framework. Easy deployment on new chains in under 2 hours. "

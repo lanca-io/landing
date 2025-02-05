@@ -3,7 +3,7 @@
 	flex-direction: column;
 	width: 390px;
 	height: 376px;
-	border-radius: var(--space-3);
+	border-radius: var(--space-5);
 	padding: var(--space-4);
 	gap: 10px;
 	background-color: var(--color-grey-25);
@@ -15,4 +15,22 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+}
+
+.button-container {
+	padding: var(--space-1) 0;
+}
+
+@media (max-width: 992px) {
+	.swap-card {
+		width: 448px;
+		height: 376px;
+	}
+}
+
+@media (max-width: 480px) {
+	.swap-card {
+		max-width: 344px;
+		height: 376px;
+	}
 }

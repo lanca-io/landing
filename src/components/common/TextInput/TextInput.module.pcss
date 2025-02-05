@@ -32,5 +32,15 @@
 }
 
 .input-error {
-	border: 2px solid rgba(228, 15, 15, 1);
+	border: 2px solid var(--color-danger-500);
+}
+
+.input:focus:not(.input-error),
+.textarea:focus:not(.textarea-error) {
+	outline: 2px solid var(--color-primary-600);
+}
+
+.input-error:focus,
+.textarea-error:focus {
+	outline: none;
 }
