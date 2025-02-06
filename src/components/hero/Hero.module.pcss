@@ -2,16 +2,17 @@
 	display: flex;
 	flex-direction: column;
 	height: calc(100vh - var(--header-height));
-	max-width: 1010px;
 	margin: 0 auto;
 	padding-top: var(--space-6);
 	gap: var(--space-6);
+	width: 100%;
 }
 
 .hero__title {
 	display: flex;
 	text-align: center;
 	justify-content: center;
+	width: 100%;
 }
 
 .hero__content {
@@ -19,6 +20,7 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	width: 100%;
 }
 
 .hero__info {
@@ -34,6 +36,9 @@
 @media (max-width: 992px) {
 	.hero {
 		height: calc(1133px - var(--header-height));
+	}
+	.hero__title {
+		max-width: 1215px;
 	}
 }
 
