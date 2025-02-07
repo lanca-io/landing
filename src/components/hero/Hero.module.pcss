@@ -6,6 +6,7 @@
 	padding-top: var(--space-6);
 	gap: var(--space-6);
 	width: 100%;
+	align-items: center;
 }
 
 .hero__title {
@@ -13,6 +14,7 @@
 	text-align: center;
 	justify-content: center;
 	width: 100%;
+	max-width: 1532px;
 }
 
 .hero__content {
@@ -31,6 +33,12 @@
 	gap: var(--space-1);
 	padding-bottom: var(--space-8);
 	margin-top: auto;
+}
+
+@media (max-width: 1280px) {
+	.hero__title {
+		max-width: 1010px;
+	}
 }
 
 @media (max-width: 992px) {
