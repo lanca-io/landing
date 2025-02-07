@@ -12,14 +12,15 @@
 	border-radius: var(--space-6);
 	background: var(--color-grey-50);
 	gap: 10px;
-	width: 211px;
-	height: 211px;
+	width: 183px;
+	height: 183px;
 	flex-shrink: 0;
 }
 
 .benefit-card__heading {
 	display: flex;
 	gap: var(--space-2);
+	flex-wrap: wrap;
 }
 
 .benefit-card__image {
@@ -62,6 +63,23 @@
 			max-width: 595px;
 			min-width: 328px;
 		}
+	}
+
+	.benefit-card__imageContainer {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: var(--space-6);
+		background: var(--color-grey-50);
+		gap: 10px;
+		width: 211px;
+		height: 211px;
+		flex-shrink: 0;
+	}
+
+	.benefit-card__image {
+		width: 163px;
+		height: auto;
 	}
 }
 

@@ -20,6 +20,10 @@
 
 .description__content {
 	text-align: center;
+
+	div {
+		max-width: 916px;
+	}
 }
 
 .description__title {
@@ -51,11 +55,31 @@
 	.description__text {
 		text-align: center;
 		max-width: 390px;
-		margin: 0 auto;
+	}
+}
+
+@media (max-width: 992px) {
+	.description__text {
+		text-align: center;
+		max-width: 610px;
+		min-width: 446px;
+	}
+	.description__content {
+		text-align: center;
+
+		div {
+			max-width: 769px;
+		}
 	}
 }
 
 @media (max-width: 480px) {
+	.description__text {
+		text-align: center;
+		max-width: 343px;
+		min-width: 343px;
+	}
+
 	.description__button {
 		width: 168px;
 	}
@@ -63,6 +87,8 @@
 	.description__title {
 		font-size: 24px;
 		flex-direction: column;
+		max-width: 343px;
+		min-width: 343px;
 	}
 
 	.description__subtitle {
