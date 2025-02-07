@@ -9,14 +9,6 @@ const partners = [
 	{ title: 'Powered by Concero', logo: <Concero />, color: 'concero' as PartnerColor },
 ]
 
-const images = [
-	{ src: '/LancaBridge.png', className: classNames['main__image'] },
-	{ src: '/Add.png', className: classNames['second__image'] },
-	{ src: '/Decentralized.png', className: classNames['third__image'] },
-	{ src: '/Secure.png', className: classNames['fourth__image'] },
-	{ src: '/Gas.png', className: classNames['fifth__image'] },
-]
-
 const About: FC = (): JSX.Element => {
 	return (
 		<div className={classNames['about']}>
@@ -33,9 +25,7 @@ const About: FC = (): JSX.Element => {
 					</p>
 				</div>
 				<div className={classNames['about__content__illustration']}>
-					{images.map((image, index) => (
-						<img key={index} src={image.src} className={image.className} />
-					))}
+					<img src="/About.png" alt="About" />
 				</div>
 			</div>
 		</div>
