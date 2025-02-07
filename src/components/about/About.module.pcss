@@ -3,8 +3,10 @@
 	flex-direction: column;
 	padding: var(--space-8) var(--space-6);
 	gap: var(--space-8);
+	width: 100%;
+	max-width: 1920px;
+	align-items: center;
 	margin: 0 auto;
-	max-width: 1300px;
 }
 
 .about__partners {
@@ -23,6 +25,8 @@
 .about__content__title {
 	display: flex;
 	text-align: center;
+	width: 70%;
+	margin: 0 auto;
 }
 
 .about__content__illustration {
@@ -36,9 +40,14 @@
 }
 
 @media (max-width: 1280px) {
-	.about {
-		max-width: 802px;
+	.about__content__title {
 		width: 100%;
+	}
+}
+
+@media (max-width: 992px) {
+	.about__content__illustration {
+		height: 381px;
 	}
 }
 

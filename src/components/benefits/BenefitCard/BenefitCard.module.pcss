@@ -2,7 +2,7 @@
 	display: flex;
 	flex-direction: row;
 	gap: var(--space-5);
-	width: 100%; /* Ensure it takes full width of the container */
+	width: 100%;
 }
 
 .benefit-card__imageContainer {
@@ -12,8 +12,8 @@
 	border-radius: var(--space-6);
 	background: var(--color-grey-50);
 	gap: 10px;
-	width: 183px;
-	height: 183px;
+	width: 211px;
+	height: 211px;
 	flex-shrink: 0;
 }
 
@@ -31,7 +31,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: var(--space-3);
-	max-width: 709px;
+	width: 100%;
 	flex-grow: 1;
 }
 
@@ -48,14 +48,18 @@
 
 @media (max-width: 1280px) {
 	.benefit-card__content {
-		width: 389px;
+		width: 40%;
 	}
 }
 
 @media (max-width: 480px) {
 	.benefit-card {
 		flex-direction: column;
-		gap: var(--space-4);
+		gap: var(--space-5);
+	}
+
+	.benefit-card__content {
+		width: 100%;
 	}
 
 	.benefit-card__imageContainer {
