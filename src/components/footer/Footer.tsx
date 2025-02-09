@@ -78,12 +78,12 @@ const Documentation: FC = memo(() => {
 
 const Copyright: FC = memo(() => (
 	<div className={classNames['footer__copyright']}>
-		<p className="text-medium">© Lanca 2024</p>
+		<p className="text-medium">© Lanca 2025</p>
 		<div className={classNames['footer__policies']}>
-			<a href="/privacy">
+			<a>
 				<p className="text-medium">Privacy Policy</p>
 			</a>
-			<a href="/terms">
+			<a>
 				<p className="text-medium">Terms of Service</p>
 			</a>
 		</div>
