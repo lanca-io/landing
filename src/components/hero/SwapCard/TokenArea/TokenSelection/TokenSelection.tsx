@@ -17,7 +17,7 @@ const TokenSelection: FC = (): JSX.Element => {
 	return (
 		<a className={classNames['token-selection__button']} href={externalLinks.app} rel="noreferrer" target="_blank">
 			<div className={classNames['token-selection']}>
-				<Badge logoURL="/USDC.png" chainURL="/Polygon.png" />
+				<Badge logoURL="/USDC.svg" chainURL="/Polygon.png" />
 				<SelectedTokenShape />
 			</div>
 			<TrailArrowRightIcon />
