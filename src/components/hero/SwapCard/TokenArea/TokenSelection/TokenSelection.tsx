@@ -25,7 +25,7 @@ const SelectedTokenShape: FC<SelectedTokenShapeProps> = ({ token, chain }): JSX.
 	)
 }
 
-const TokenSelection: FC<TokenSelectionProps> = ({ token, chain, tokenLogoURL, chainLogoURL}): JSX.Element => {
+const TokenSelection: FC<TokenSelectionProps> = ({ token, chain, tokenLogoURL, chainLogoURL }): JSX.Element => {
 	return (
 		<a className={classNames['token-selection__button']} href={externalLinks.app} rel="noreferrer" target="_blank">
 			<div className={classNames['token-selection']}>

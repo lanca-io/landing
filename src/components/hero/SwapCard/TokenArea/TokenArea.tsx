@@ -24,7 +24,7 @@ const TokenArea: FC<TokenAreaProps> = ({ direction, token, chain, tokenLogoURL, 
 			</div>
 			<div className={classNames['token-area__content']}>
 				<MockTextInput />
-				<TokenSelection token={token} chain={chain} tokenLogoURL={tokenLogoURL} chainLogoURL={chainLogoURL}/>
+				<TokenSelection token={token} chain={chain} tokenLogoURL={tokenLogoURL} chainLogoURL={chainLogoURL} />
 			</div>
 			<Amounts />
 		</div>
