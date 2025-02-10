@@ -30,8 +30,9 @@
 
 .action {
 	display: flex;
-	flex-direction: row;
 	justify-content: flex-end;
+	align-items: flex-end;
+	margin-top: auto;
 }
 
 .icon__wrapper {
@@ -45,7 +46,16 @@
 }
 
 .disabled {
-	cursor: not-allowed;
+	cursor: not-allowed !important;
+}
+
+.link {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: inherit;
 }
 
 @media (max-width: 992px) {
