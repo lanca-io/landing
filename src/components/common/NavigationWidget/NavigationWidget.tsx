@@ -26,14 +26,14 @@ const NavigationWidget: FC<WidgetProps> = ({ title, size = 'large', link, disabl
 					</div>
 				</a>
 			) : (
-				<>
+				<div className={classNames['link']}>
 					<div className={classNames['title']}>
 						<p className="heading-xsmall">{title}</p>
 					</div>
 					<div className={classNames['action']}>
 						<div className={classNames['icon__wrapper']}>{rightArrow}</div>
 					</div>
-				</>
+				</div>
 			)}
 		</div>
 	)

@@ -6,6 +6,18 @@
 	background-color: var(--color-grey-50);
 }
 
+.card:not(.disabled):hover {
+	background-color: var(--color-grey-100);
+
+	.icon__wrapper {
+		background-color: var(--color-grey-200);
+	}
+
+	.icon__wrapper:hover {
+		background-color: var(--color-grey-300);
+	}
+}
+
 .small,
 .large {
 	padding: var(--space-5);
@@ -38,8 +50,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 32px;
-	height: 32px;
+	width: 40px;
+	height: 40px;
 	border-radius: var(--space-3);
 	background-color: var(--color-grey-100);
 }
@@ -55,6 +67,7 @@
 	height: 100%;
 	text-decoration: none;
 	color: inherit;
+	flex: 1;
 }
 
 @media (max-width: 992px) {
