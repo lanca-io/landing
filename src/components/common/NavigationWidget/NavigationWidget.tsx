@@ -16,22 +16,25 @@ const NavigationWidget: FC<WidgetProps> = ({ title, size = 'large', link, disabl
 
 	return (
 		<div className={`${classNames['card']} ${classNames[size]} ${disabled ? classNames['disabled'] : ''}`}>
-			<div className={classNames['title']}>
-				<p className="heading-xsmall">{title}</p>
-			</div>
-			<div className={classNames['action']}>
-				{!disabled ? (
-					<a href={link} target="_blank" rel="noreferrer">
-						<div className={`${classNames['icon__wrapper']} ${disabled ? classNames['disabled'] : ''}`}>
-							{rightArrow}
-						</div>
-					</a>
-				) : (
-					<div className={`${classNames['icon__wrapper']} ${disabled ? classNames['disabled'] : ''}`}>
-						{rightArrow}
+			{!disabled ? (
+				<a href={link} target="_blank" rel="noreferrer" className={classNames['link']}>
+					<div className={classNames['title']}>
+						<p className="heading-xsmall">{title}</p>
 					</div>
-				)}
-			</div>
+					<div className={classNames['action']}>
+						<div className={classNames['icon__wrapper']}>{rightArrow}</div>
+					</div>
+				</a>
+			) : (
+				<div className={classNames['link']}>
+					<div className={classNames['title']}>
+						<p className="heading-xsmall">{title}</p>
+					</div>
+					<div className={classNames['action']}>
+						<div className={classNames['icon__wrapper']}>{rightArrow}</div>
+					</div>
+				</div>
+			)}
 		</div>
 	)
 }

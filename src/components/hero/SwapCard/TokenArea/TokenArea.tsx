@@ -7,10 +7,14 @@ import Amounts from './Amounts/Amounts'
 type Direction = 'from' | 'to'
 
 type TokenAreaProps = {
+	token: string
+	chain: string
+	tokenLogoURL: string
+	chainLogoURL: string
 	direction: Direction
 }
 
-const TokenArea: FC<TokenAreaProps> = ({ direction }): JSX.Element => {
+const TokenArea: FC<TokenAreaProps> = ({ direction, token, chain, tokenLogoURL, chainLogoURL }): JSX.Element => {
 	const heading = direction === 'from' ? 'You pay' : 'You receive'
 
 	return (
@@ -20,7 +24,7 @@ const TokenArea: FC<TokenAreaProps> = ({ direction }): JSX.Element => {
 			</div>
 			<div className={classNames['token-area__content']}>
 				<MockTextInput />
-				<TokenSelection />
+				<TokenSelection token={token} chain={chain} tokenLogoURL={tokenLogoURL} chainLogoURL={chainLogoURL} />
 			</div>
 			<Amounts />
 		</div>

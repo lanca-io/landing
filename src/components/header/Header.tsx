@@ -47,7 +47,7 @@ const Header: FC<HeaderProps> = ({ toggleModal }) => {
 		<>
 			<header className={classNames['header']}>
 				<div className={classNames['header__logo-container']}>
-					<img src="/Lanca.png" alt="Lanca Logo" />
+					<img src="/Lanca.svg" alt="Lanca Logo" />
 				</div>
 				<nav className={classNames['header__nav']} aria-label="Navigation">
 					{navItems.map(item => (

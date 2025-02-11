@@ -28,7 +28,7 @@ const description = (
 
 const LogoContainer: FC = memo(() => (
 	<div className={classNames['footer__logo-container']}>
-		<img src="/Lanca.png" alt="Lanca Logo" />
+		<img src="/LancaLarge.svg" alt="Lanca Logo" />
 	</div>
 ))
 
