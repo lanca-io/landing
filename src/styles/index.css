@@ -116,9 +116,10 @@ p {
 
 .heading-large {
 	font-size: 48px;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 56px;
 	color: var(--color-grey-700);
+	letter-spacing: -0.02em;
 }
 
 .text-medium {
@@ -140,18 +141,21 @@ p {
 	font-weight: 500;
 	line-height: 36px;
 	color: var(--color-grey-700);
+	letter-spacing: -0.02em;
 }
 
 .heading-small {
 	font-size: 32px;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 36px;
 	color: var(--color-grey-700);
+	letter-spacing: -0.02em;
 }
 
 .heading-xsmall {
 	font-size: 24px;
-	font-weight: 400;
+	font-weight: 500;
 	line-height: 28px;
 	color: var(--color-grey-700);
+	letter-spacing: -0.02em;
 }
