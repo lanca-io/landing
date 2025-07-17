@@ -11,7 +11,7 @@ import classNames from './Header.module.pcss'
 const navItems = [
 	{ href: externalLinks.sdk, label: 'SDK', disabled: false },
 	{ href: '/', label: 'Bridging Framework', disabled: true },
-	{ href: '/contact', label: 'Whitepaper', disabled: true },
+	{ href: 'https://concero.io/lanca_whitepaper.pdf', label: 'Whitepaper', disabled: false },
 ]
 
 type HeaderProps = {
