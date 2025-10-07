@@ -12,6 +12,7 @@ const navItems = [
 	{ href: externalLinks.sdk, label: 'SDK', disabled: false },
 	{ href: '/', label: 'Bridging Framework', disabled: true },
 	{ href: 'https://concero.io/lanca_whitepaper.pdf', label: 'Whitepaper', disabled: false },
+	{ href: 'https://docs.lanca.io/', label: 'Docs', disabled: false },
 ]
 
 type HeaderProps = {
