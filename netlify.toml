@@ -1,0 +1,14 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/whitepaper.pdf"
+  to = "/whitepaper.pdf"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/whitepaper"
+  to = "/whitepaper.pdf"
+  status = 301
